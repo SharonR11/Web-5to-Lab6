@@ -7,6 +7,13 @@ const verifyToken = require('./verifyToken');
 
 const User = require('../models/User');
 
+__dirname = ''
+
+router.get('/', async(req, res, next) =>{
+    res.sendFile('login.html',{root: __dirname+ 'public/'});
+//res.send(__dirname+ 'public/')
+})
+
 //podria haber un retardo por la insercion de datos
 //por eso se usar asincronico para que no espere
 router.post('/signup', async (req, res, next) => {
@@ -45,7 +52,8 @@ router.get('/dashboard', verifyToken, async (req, res, next) => {
 })
 
 router.get('/register', (req, res, next) =>{
-    res.sendFile(__dirname + '../public/register.html')
+    res.sendFile('register.html',{root: __dirname+ 'public/'});
+    //res.sendFile(__dirname + 'public/register.html')
 })
 
 router.post('/signin', async (req, res, next) => {
