@@ -8,3 +8,7 @@ async function init(){
 }
 //cada vez que se dispere el servicio va a esperar a que se ejecute
 init();
+
+//usurario:sharon
+//email: sharon@abc.com
+//pass:1234
